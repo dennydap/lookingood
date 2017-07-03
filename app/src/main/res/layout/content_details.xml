@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.garudamaya.dennydap.lookingood.DetailsActivity"
+    tools:showIn="@layout/activity_details">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/placeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="8dp"
+                    android:text="Lorem ipsum"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/placeAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/placeTitle"
+                    android:layout_centerHorizontal="true"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:text="Lorem ipsum"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/placePrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/placeAddress"
+                    android:layout_centerHorizontal="true"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:text="Lorem ipsum"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/placeHours"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/placePrice"
+                    android:layout_centerHorizontal="true"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:text="Lorem ipsum"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/placeHours"
+                    android:orientation="horizontal">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/shareButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:minHeight="32dp"
+                        android:minWidth="32dp"
+                        app:srcCompat="@drawable/ic_share_white_18px" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/callButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:minHeight="32dp"
+                        android:minWidth="32dp"
+                        app:srcCompat="@drawable/ic_call_white_18px" />
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/navigationButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:minHeight="32dp"
+                        android:minWidth="32dp"
+                        app:srcCompat="@drawable/ic_directions_white_24px"
+                        />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:padding="16dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/placePhotoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="8dp"
+                    android:text="Foto"
+                    android:textSize="24sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/placePhotoTitle"
+                    android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/placePicture1"
+                    android:layout_margin="8dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:scaleType="centerCrop"
+                    />
+                <ImageView
+                    android:id="@+id/placePicture2"
+                    android:layout_margin="8dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:scaleType="centerCrop"
+                    android:layout_toRightOf="@id/placePicture1"/>
+                <ImageView
+                    android:id="@+id/placePicture3"
+                    android:layout_margin="8dp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:scaleType="centerCrop"
+                    android:layout_toRightOf="@id/placePicture2"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

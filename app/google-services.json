@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "876919682370",
+    "firebase_url": "https://lookingood-2c9d7.firebaseio.com",
+    "project_id": "lookingood-2c9d7",
+    "storage_bucket": "lookingood-2c9d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876919682370:android:d67c4e2c937257ed",
+        "android_client_info": {
+          "package_name": "com.garudamaya.dennydap.lookingood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876919682370-pqmjqfv55n41sld42nrlhsgg0iphjjrl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgJq9gYo0upKAn20wJYJTAsJNpjQCzR2E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876919682370-pqmjqfv55n41sld42nrlhsgg0iphjjrl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
