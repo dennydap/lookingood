@@ -2,6 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#f3e5f5"
+    android:tileMode="repeat"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
@@ -18,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:dividerHeight="0dp"
+        android:divider="#f3e5f5"
         android:layout_marginBottom="60dp" />
 
     <android.support.design.widget.FloatingActionButton
