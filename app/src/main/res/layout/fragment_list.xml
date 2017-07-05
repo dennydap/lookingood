@@ -14,7 +14,6 @@
         android:layout_height="64dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" />
-
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
@@ -35,4 +34,5 @@
         android:background="@color/colorPrimaryDark"
         app:rippleColor="#FFF"
         app:srcCompat="@drawable/ic_sort_by_alpha_white_24px" />
+
 </RelativeLayout>

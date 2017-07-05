@@ -27,6 +27,10 @@ public class ListFragment extends Fragment {
     // Mendeklarasikan variabel untuk sortir
     String modeSortir = "nama";
 
+    // Variable komponen
+    ListView mListView;
+    ProgressBar progressBar;
+
     public ListFragment() {
         // Membutuhkan constructor kosong
     }
@@ -43,12 +47,51 @@ public class ListFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_list, container, false);
 
         // Mendeklarasikan variabel untuk komponen layout
-        final ListView mListView = (ListView) v.findViewById(R.id.listView);
-        final ProgressBar progressBar = (ProgressBar) v.findViewById(R.id.listProgress);
+        mListView = (ListView) v.findViewById(R.id.listView);
+        progressBar = (ProgressBar) v.findViewById(R.id.listProgress);
 
         // Membuat FirebaseListAdapter untuk Listview
+        sort = myRef.orderByChild("nama");
+        setUpListAdapter();
+        // Menghilangkan ProgressBar karena data sudah selesai di-Load
+        progressBar.setVisibility(View.INVISIBLE);
+        // Meberi adapter mAdapter untuk ListView
+        mListView.setAdapter(mAdapter);
+
+
+        final FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (modeSortir) {
+                    case "nama":
+                        sort = myRef.orderByChild("nama");
+                        setUpListAdapter();
+                        // Meberi adapter mAdapter untuk ListView
+                        mListView.setAdapter(mAdapter);
+                        fab.setImageResource(R.drawable.ic_attach_money_white_24px);
+                        modeSortir = "harga";
+                        break;
+                    case "harga":
+                        // Sortir berdasarkan harga
+                        sort = myRef.orderByChild("harga");
+                        setUpListAdapter();
+                        // Meberi adapter mAdapter untuk ListView
+                        mListView.setAdapter(mAdapter);
+                        fab.setImageResource(R.drawable.ic_sort_by_alpha_white_24px);
+                        modeSortir = "nama";
+                        break;
+                }
+            }
+        });
+
+        return v;
+    }
+
+    public void setUpListAdapter() {
+        // Membuat FirebaseListAdapter untuk Listview
         mAdapter = new FirebaseListAdapter<DetailsModel>(getActivity(),
-                DetailsModel.class, R.layout.list_item, myRef) {
+                DetailsModel.class, R.layout.list_item, sort) {
             @Override
             protected void populateView(View v, final DetailsModel model, int position) {
                 // Memberi komponen-komponen list_item nilai
@@ -57,8 +100,6 @@ public class ListFragment extends Fragment {
                 Picasso.with(getContext())
                         .load(model.getGambar0())
                         .into((ImageView) v.findViewById(R.id.itemGambar));
-                // Menghilangkan ProgressBar karena data sudah selesai di-Load
-                progressBar.setVisibility(View.INVISIBLE);
                 // Jika item diclick...
                 v.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -69,79 +110,6 @@ public class ListFragment extends Fragment {
                 });
             }
         };
-        // Meberi adapter mAdapter untuk ListView
-        mListView.setAdapter(mAdapter);
-
-        final FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (modeSortir) {
-                    case "nama":
-                        // Sortir berdasarkan harga
-                        sort = myRef.orderByChild("harga");
-                        // Membuat FirebaseListAdapter untuk Listview
-                        mAdapter = new FirebaseListAdapter<DetailsModel>(getActivity(),
-                                DetailsModel.class, R.layout.list_item, sort) {
-                            @Override
-                            protected void populateView(View v, final DetailsModel model, int position) {
-                                // Memberi komponen-komponen list_item nilai
-                                ((TextView) v.findViewById(R.id.itemText)).setText(model.getNama());
-                                ((TextView) v.findViewById(R.id.itemAlamat)).setText(model.getAlamat());
-                                Picasso.with(getContext())
-                                        .load(model.getGambar0())
-                                        .into((ImageView) v.findViewById(R.id.itemGambar));
-                                // Menghilangkan ProgressBar karena data sudah selesai di-Load
-                                progressBar.setVisibility(View.INVISIBLE);
-                                // Jika item diclick...
-                                v.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        // ...informasi dilempar ke activity DetailsActivity
-                                        new IntentPass(getActivity(), model);
-                                    }
-                                });
-                            }
-                        };
-                        // Meberi adapter mAdapter untuk ListView
-                        mListView.setAdapter(mAdapter);
-                        fab.setImageResource(R.drawable.ic_attach_money_white_24px);
-                        modeSortir = "harga";
-                        break;
-                    case "harga":
-                        // Sortir berdasarkan nama
-                        sort = myRef.orderByChild("nama");
-                        // Membuat FirebaseListAdapter untuk Listview
-                        mAdapter = new FirebaseListAdapter<DetailsModel>(getActivity(),
-                                DetailsModel.class, R.layout.list_item, sort) {
-                            @Override
-                            protected void populateView(View v, final DetailsModel model, int position) {
-                                // Memberi komponen-komponen list_item nilai
-                                ((TextView) v.findViewById(R.id.itemText)).setText(model.getNama());
-                                ((TextView) v.findViewById(R.id.itemAlamat)).setText(model.getAlamat());
-                                Picasso.with(getContext())
-                                        .load(model.getGambar0())
-                                        .into((ImageView) v.findViewById(R.id.itemGambar));
-                                // Menghilangkan ProgressBar karena data sudah selesai di-Load
-                                progressBar.setVisibility(View.INVISIBLE);
-                                // Jika item diclick...
-                                v.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        // ...informasi dilempar ke activity DetailsActivity
-                                        new IntentPass(getActivity(), model);
-                                    }
-                                });
-                            }
-                        };
-                        // Meberi adapter mAdapter untuk ListView
-                        mListView.setAdapter(mAdapter);
-                        fab.setImageResource(R.drawable.ic_sort_by_alpha_white_24px);
-                        modeSortir = "nama";
-                        break;
-                }
-            }
-        });
-        return v;
     }
+
 }
