@@ -121,6 +121,7 @@ public class MapFragment extends SupportMapFragment implements OnMapReadyCallbac
                     Marker marker = mMap.addMarker(new MarkerOptions()
                             .position(latlng)
                             .title(nama_tempat)
+                            .snippet("Klik Disini")
                             .icon(BitmapDescriptorFactory.fromResource(R.drawable.derma_marker)));
                     detailMarkerMap.put(marker, detail);
                 }

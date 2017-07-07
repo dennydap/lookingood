@@ -24,31 +24,24 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                // ...perpindahan Activity dari SplashActivity ke MainActivity
+                // ...perpindahan Activity dari SplashActivity ke IntroActivity
                 // dengan jeda 3000ms (3 detik)
-                Intent mainIntent = new Intent(SplashActivity.this,MainActivity.class);
+                Intent mainIntent = new Intent(SplashActivity.this,IntroActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
                 SplashActivity.this.finish();
             }
         }, 3000);
     }
 
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         // Setelah request location dilakukan, jika...
         switch (requestCode) {
             // ...diberikan permission, maka lanjutkan program
             case 1: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                    {
-
-                    }
-                else
-                    {
+                if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED)
                         // ...tidak diberikan permission, matikan aplikasi
                         System.exit(0);
                     }
-                return;
             }
         }
-    }
 }

@@ -17,7 +17,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBmwQf2ivQBioOFShInssCfhifz4qrwvbY" />
-
         <activity
             android:name=".SplashActivity"
             android:configChanges="orientation"
@@ -28,6 +27,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntroActivity"
+            android:theme="@style/AppThemeNoActionBar">
         </activity>
         <activity
             android:name=".MainActivity"

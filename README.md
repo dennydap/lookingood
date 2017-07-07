@@ -4,8 +4,10 @@
 
 Di dalam project ini, library yang digunakan adalah 
 - Firebase Database, untuk keperluan menampilkan data
-- PhotoView, untuk melihat gambar dengan beberapa gestur tambahan seperti Zoom
-- Picasso, untuk menampilkan gambar serta caching
+- [FirebaseUI](https://github.com/firebase/FirebaseUI-Android), untuk Firebase List Adapter
+- [PhotoView](https://github.com/chrisbanes/PhotoView), untuk melihat gambar dengan beberapa gestur tambahan seperti Zoom
+- [Picasso](https://github.com/square/picasso), untuk menampilkan gambar serta caching
+- [AppIntro](https://github.com/apl-devs/AppIntro), untuk memudahkan dalam membuat Intro saat pertama kali dijalankan.
 
 Source code sudah dilengkapi dengan komentar dalam bahasa Indonesia untuk memudahkan pengembangan. Jika mempunyai masalah lebih lanjut, silahkan mengirimkan email ke denny.aditya.p@gmail.com
 
