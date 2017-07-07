@@ -3,7 +3,7 @@
 **LookinGood** adalah aplikasi Android yang menggunakan teknologi layanan berbasis lokasi (Location Based System) dan Firebase API yang dikembangkan oleh Google. LookinGood menampilkan data tempat perawatan kecantikan yang ada di sekitar Jl. Margonda, Depok. LookinGood menampilkan beberapa data seperti harga, foto, jam operasional, serta navigasi menuju tempat tersebut.
 
 Di dalam project ini, library yang digunakan adalah 
-- Firebase Database, untuk keperluan menampilkan data
+- [Firebase Database](https://firebase.google.com/), untuk keperluan menampilkan data
 - [FirebaseUI](https://github.com/firebase/FirebaseUI-Android), untuk Firebase List Adapter
 - [PhotoView](https://github.com/chrisbanes/PhotoView), untuk melihat gambar dengan beberapa gestur tambahan seperti Zoom
 - [Picasso](https://github.com/square/picasso), untuk menampilkan gambar serta caching
