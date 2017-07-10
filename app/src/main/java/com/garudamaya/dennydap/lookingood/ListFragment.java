@@ -53,28 +53,30 @@ public class ListFragment extends Fragment {
         // Membuat FirebaseListAdapter untuk Listview
         sort = myRef.orderByChild("nama");
         setUpListAdapter();
-        // Menghilangkan ProgressBar karena data sudah selesai di-Load
-        progressBar.setVisibility(View.INVISIBLE);
         // Meberi adapter mAdapter untuk ListView
         mListView.setAdapter(mAdapter);
 
-
+        // Mendeklarasikan tombol untuk sortir
+        // Ketika tombol dalam mode...
         final FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (modeSortir) {
+                    // ...nama, maka...
                     case "nama":
-                        sort = myRef.orderByChild("nama");
+                        // ...sortir berdasarkan harga
+                        sort = myRef.orderByChild("harga");
                         setUpListAdapter();
                         // Meberi adapter mAdapter untuk ListView
                         mListView.setAdapter(mAdapter);
                         fab.setImageResource(R.drawable.ic_attach_money_white_24px);
                         modeSortir = "harga";
                         break;
+                    // ...harga, maka...
                     case "harga":
-                        // Sortir berdasarkan harga
-                        sort = myRef.orderByChild("harga");
+                        // ...sortir berdasarkan nama
+                        sort = myRef.orderByChild("nama");
                         setUpListAdapter();
                         // Meberi adapter mAdapter untuk ListView
                         mListView.setAdapter(mAdapter);
@@ -84,7 +86,6 @@ public class ListFragment extends Fragment {
                 }
             }
         });
-
         return v;
     }
 
@@ -97,9 +98,12 @@ public class ListFragment extends Fragment {
                 // Memberi komponen-komponen list_item nilai
                 ((TextView) v.findViewById(R.id.itemText)).setText(model.getNama());
                 ((TextView) v.findViewById(R.id.itemAlamat)).setText(model.getAlamat());
+                ((TextView) v.findViewById(R.id.itemHarga)).setText(
+                        "Harga mulai dari Rp. " + model.getHarga());
                 Picasso.with(getContext())
                         .load(model.getGambar0())
                         .into((ImageView) v.findViewById(R.id.itemGambar));
+                progressBar.setVisibility(View.GONE);
                 // Jika item diclick...
                 v.setOnClickListener(new View.OnClickListener() {
                     @Override

@@ -13,7 +13,9 @@
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+        android:visibility="visible"/>
+    
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
