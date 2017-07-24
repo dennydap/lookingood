@@ -145,6 +145,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:scaleType="centerCrop"
+                    android:layout_centerHorizontal="true"
                     />
                 <ImageView
                     android:id="@+id/placePicture2"

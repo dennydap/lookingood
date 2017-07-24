@@ -41,23 +41,29 @@
             <TextView
                 android:id="@+id/itemText"
                 android:layout_margin="8dp"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="top">
             </TextView>
             <TextView
                 android:id="@+id/itemAlamat"
                 android:layout_margin="8dp"
                 android:textSize="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical">
             </TextView>
             <TextView
                 android:id="@+id/itemHarga"
                 android:layout_margin="8dp"
                 android:textSize="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="bottom">
             </TextView>
         </LinearLayout>
 

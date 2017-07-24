@@ -3,30 +3,10 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_info">InfoActivity</string>
     <string name="title_activity_details">DetailsActivity</string>
-    <string name="version">
-        Version 1.0\n
-        Created by
-        Denny Aditya Pradipta\n
-        52414708\n
-        3IA01
-    </string>
     <string-array name="settings_list">
         <item>Tentang Pembuat</item>
         <item>Kontak Kami</item>
     </string-array>
-    <string name="jam_operasional">
-        "Senin\n"
-        "Selasa\n"
-        "Rabu\n"
-        "Kamis\n"
-        "Jumat\n"
-        "Sabtu\n"
-        "Minggu"
-    </string>
-    <array name="pilihan">
-        <item>Nama</item>
-        <item>Harga</item>
-    </array>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

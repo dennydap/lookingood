@@ -1,8 +1,10 @@
-package com.garudamaya.dennydap.lookingood;
+  package com.garudamaya.dennydap.lookingood;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.*;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -103,5 +105,23 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Jika tombol back ditekan,
+        // Muncul konfirmasi untuk keluar aplikasi atau tidak
+        new AlertDialog.Builder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah anda ingin keluar dari aplikasi?")
+                .setCancelable(false)
+                .setNegativeButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        System.exit(0);
+                    }
+                })
+                .setPositiveButton("Tidak", null)
+                .show();
     }
 }

@@ -8,7 +8,7 @@ public class DetailsModel{
     private String nama;
     private String kategori;
     private String alamat;
-    private String harga;
+    private Integer harga;
     private String jam;
     private String nomor_telepon;
     private String gambar0, gambar1, gambar2;
@@ -20,7 +20,7 @@ public class DetailsModel{
 
     // Constructor yang dibutuhkan untuk membuat objek Model
     public DetailsModel(double latitude, double longitude, String nama, String kategori,
-                        String alamat, String harga, String jam, String nomor_telepon,
+                        String alamat, Integer harga, String jam, String nomor_telepon,
                         String gambar0, String gambar1, String gambar2) {
         this.latitude = latitude;
         this.longitude = longitude;
@@ -49,7 +49,7 @@ public class DetailsModel{
     public String getAlamat() {
         return alamat;
     }
-    public String getHarga() {
+    public Integer getHarga() {
         return harga;
     }
     public String getJam() {

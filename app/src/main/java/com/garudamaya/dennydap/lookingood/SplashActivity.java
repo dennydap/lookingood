@@ -20,6 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         // Meminta request permission untuk menggunakan akses lokasi
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
+
         // Menggunakan Handler().postDelayed untuk menjalankan...
         new Handler().postDelayed(new Runnable(){
             @Override

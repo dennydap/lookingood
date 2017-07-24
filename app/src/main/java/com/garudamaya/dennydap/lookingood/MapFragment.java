@@ -1,11 +1,13 @@
 package com.garudamaya.dennydap.lookingood;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -31,7 +33,8 @@ public class MapFragment extends SupportMapFragment implements OnMapReadyCallbac
     // Deklarasi variabel penampung
     // Variabel-variabel berikut digunakan untuk menampung data dari Firebase
     Double latitude_, longitude_;
-    String nama_tempat, kategori, alamat, nomor_telepon, harga, jam, gambar0, gambar1, gambar2;
+    String nama_tempat, kategori, alamat, nomor_telepon, jam, gambar0, gambar1, gambar2;
+    Integer harga;
 
     // Deklarasi variabel utama
     // GoogleMap mMap untuk keperluan Google Maps API
@@ -101,7 +104,7 @@ public class MapFragment extends SupportMapFragment implements OnMapReadyCallbac
                     longitude_ = child.child("longitude").getValue(Double.class);
                     nama_tempat = child.child("nama").getValue(String.class);
                     alamat = child.child("alamat").getValue(String.class);
-                    harga = child.child("harga").getValue(String.class);
+                    harga = child.child("harga").getValue(Integer.class);
                     nomor_telepon = child.child("nomor_telepon").getValue(String.class);
                     jam = child.child("jam").getValue(String.class);
                     gambar0 = child.child("gambar0").getValue(String.class);

@@ -14,7 +14,7 @@ public class IntentPass {
         Bundle bundle = new Bundle();
         bundle.putString("Judul", model.getNama());
         bundle.putString("Alamat", model.getAlamat());
-        bundle.putString("Harga", model.getHarga());
+        bundle.putInt("Harga", model.getHarga());
         bundle.putString("Jam", model.getJam());
         bundle.putString("NomorTelepon", model.getNomor_telepon());
         bundle.putDouble("Latitude", model.getLatitude());

@@ -61,10 +61,11 @@ public class DetailsActivity extends AppCompatActivity {
         setTitle(namaTempat);
         placeTitle.setText(namaTempat);
         placeAddress.setText(alamatTempat);
-        placePrice.setText("Harga mulai dari Rp. " + bundle.getString("Harga"));
+        placePrice.setText("Harga mulai dari Rp. " + bundle.getInt("Harga"));
         placeHours.setText("Buka jam " + bundle.getString("Jam"));
 
         // Memberi gambar ke ImageView
+        try {
         Picasso.with(getApplicationContext())
                 .load(bundle.getString("Gambar0"))
                 .into(gambar0);
@@ -76,7 +77,10 @@ public class DetailsActivity extends AppCompatActivity {
                 .into(gambar2);
         Picasso.with(getApplicationContext())
                 .load(bundle.getString("Gambar2"))
-                .into(gambar3);
+                .into(gambar3); }
+        catch (Exception e) {
+            // Jika gambar gagal difetch/kosong, exception akan ditampung oleh variabel e
+        }
 
         //Memberi aksi ketika gambar diklik
         gambar1.setOnClickListener(new View.OnClickListener() {
